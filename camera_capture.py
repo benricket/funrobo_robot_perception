@@ -5,7 +5,7 @@ You save frames by simply pressing "q" on your keyboard.
 """
 import cv2
 
-video_id = 1 # this is setup-dependent and would need to change. Ranges from 0-10+
+video_id = 0 # this is setup-dependent and would need to change. Ranges from 0-10+
 cap = cv2.VideoCapture(video_id) 
 i = 0
 
@@ -16,7 +16,7 @@ while True:
 
         if cv2.waitKey(1) == ord('q'): # saves the current frame each time "q" is pressed
             print("Saving to frame.png")
-            frame_str = './img/img'+str(i)+'.png'
+            frame_str = './img/img_'+str(i)+'.png'
             # frame_str = './img/calibration_imgs/calibration_img'+str(i)+'.png'
             cv2.imwrite(frame_str, frame)
             i+= 1
